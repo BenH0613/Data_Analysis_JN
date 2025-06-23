@@ -23,4 +23,9 @@ An interactive notebook covering:
 - FacetGrids for grouped histograms
 - Regression lines (`regplot`)
 
+---
+
+Created by **Ben Huang**  
+© 2025  
+
 
