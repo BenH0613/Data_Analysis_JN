@@ -7,18 +7,18 @@ root: intro
 parts:
   - caption: 🧮 Numerical Foundations
     chapters:
-      - file: NumPy
-      - file: SciPy
+      - file: content/NumPy
+      - file: content/SciPy
 
   - caption: 🗃️ Data Handling
     chapters:
-      - file: Pandas
+      - file: content/Pandas
 
   - caption: 📊 Data Visualization
     chapters:
-      - file: Matplotlib
-      - file: Seaborn
+      - file: content/Matplotlib
+      - file: content/Seaborn
 
   - caption: 🤖 Machine Learning
     chapters:
-      - file: Scikit_learn
+      - file: content/Scikit_learn
