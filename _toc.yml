@@ -1,24 +1,35 @@
-# Table of contents
-# Learn more at https://jupyterbook.org/customize/toc.html
-
 format: jb-book
 root: intro
 
 parts:
-  - caption: 🧮 Numerical Foundations
+  - caption: Core Data Handling
     chapters:
       - file: content/NumPy
-      - file: content/SciPy
-
-  - caption: 🗃️ Data Handling
-    chapters:
+        title: "NumPy: Working with Numerical Data"
       - file: content/Pandas
+        title: "Pandas: Organizing and Analyzing Tabular Data"
 
-  - caption: 📊 Data Visualization
+  - caption: Data Visualization
     chapters:
       - file: content/Matplotlib
+        title: "Matplotlib: Visualizing Scientific Data"
       - file: content/Seaborn
+        title: "Seaborn: Statistical Data Visualization"
+      - file: content/Plotly
+        title: "Plotly: Interactive Data Visualization"
 
-  - caption: 🤖 Machine Learning
+  - caption: Scientific & Statistical Analysis
     chapters:
+      - file: content/SciPy
+        title: "SciPy: Scientific and Statistical Tools"
+      - file: content/Statsmodels
+        title: "Statsmodels: In-Depth Statistical Analysis"
+      - file: content/Sympy
+        title: "SymPy: Symbolic Math and Equations in Biology"
+
+  - caption: Bioinformatics & Machine Learning
+    chapters:
+      - file: content/Biopython
+        title: "Biopython: Tools for Biological Computation"
       - file: content/Scikit_learn
+        title: "Scikit-learn: Intro to Machine Learning for Bioscience"

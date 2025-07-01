@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>📊 Seaborn Tutorial &#8212; Data Analysis with Python</title>
+    <title>Seaborn Tutorial &#8212; Data Analysis with Python</title>
   
   
   
@@ -58,10 +58,11 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/Seaborn';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="🤖 Scikit-learn for Machine Learning" href="Scikit_learn.html" />
-    <link rel="prev" title="📊 Matplotlib for Data Visualization" href="Matplotlib.html" />
+    <link rel="next" title="Interactive Plotting with Plotly" href="Plotly.html" />
+    <link rel="prev" title="Plotting Experimental Data with matplotlib" href="Matplotlib.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -175,28 +176,36 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    Welcome to the Data Analysis Book
+                    Welcome to Python for Biochemistry
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">🧮 Numerical Foundations</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Core Data Handling</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="NumPy.html">📘 NumPy Tutorial: Numerical Foundations for Data Analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SciPy.html">📘 SciPy for Scientific Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NumPy.html">NumPy: Working with Numerical Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Pandas.html">Pandas: Organizing and Analyzing Tabular Data</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">🗃️ Data Handling</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Pandas.html">🐼 Pandas for Data Analysis</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">📊 Data Visualization</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Visualization</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Matplotlib.html">📊 Matplotlib for Data Visualization</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">📊 Seaborn Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Matplotlib.html">Matplotlib: Visualizing Scientific Data</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Seaborn Tutorial</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="Plotly.html">Plotly: Interactive Data Visualization</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Scientific &amp; Statistical Analysis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="SciPy.html">SciPy for Scientific Computing</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Statsmodels.html">Statsmodels: In-Depth Statistical Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sympy.html">SymPy Tutorial</a></li>
 
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">🤖 Machine Learning</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bioinformatics &amp; Machine Learning</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Scikit_learn.html">🤖 Scikit-learn for Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Biopython.html">Biopython: Tools for Biological Computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Scikit_learn.html">Introduction to Scikit-learn</a></li>
+
 </ul>
 
     </div>
@@ -382,7 +391,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>📊 Seaborn Tutorial</h1>
+    <h1>Seaborn Tutorial</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -392,20 +401,29 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">📊 Seaborn Tutorial</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-this-chapter-we-will">In this chapter, we will:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Seaborn Tutorial</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-seaborn">What is Seaborn?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-get-started">Let’s get started!</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-overview">Dataset Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plot">Scatter Plot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plot">Box Plot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-plot">Bar Plot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pair-plot">Pair Plot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">✅ Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#seaborn-continued">Seaborn continued</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#facetgrid-multiple-plots-by-category">🔹 1. FacetGrid: Multiple Plots by Category</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heatmap-correlation-between-numeric-columns">🔹 2. Heatmap: Correlation Between Numeric Columns</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regplot-scatter-plot-with-regression-line">🔹 3. Regplot: Scatter Plot with Regression Line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#facetgrid-multiple-plots-by-category">1. FacetGrid: Multiple Plots by Category</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heatmap-correlation-between-numeric-columns">2. Heatmap: Correlation Between Numeric Columns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regplot-scatter-plot-with-regression-line">3. Regplot: Scatter Plot with Regression Line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-dataset-simulated-protein-expression-data">Example Dataset: Simulated Protein Expression Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-plot-compare-mean-protein-levels-by-cell-type-and-drug">1. Bar Plot: Compare Mean Protein Levels by Cell Type and Drug</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plot-visualizing-distribution-of-protein-levels">2. Box Plot: Visualizing Distribution of Protein Levels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#swarm-plot-see-individual-data-points">3. Swarm Plot: See Individual Data Points</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#violin-plot-combination-of-box-distribution">4. Violin Plot: Combination of Box + Distribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heatmap-correlation-between-numeric-variables">5. Heatmap: Correlation Between Numeric Variables</a></li>
 </ul>
 </li>
 </ul>
@@ -421,20 +439,28 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="seaborn-tutorial">
-<h1>📊 Seaborn Tutorial<a class="headerlink" href="#seaborn-tutorial" title="Link to this heading">#</a></h1>
-<p>Seaborn is a Python library based on Matplotlib that makes it easy to create beautiful, informative data visualizations.</p>
-<section id="in-this-chapter-we-will">
-<h2>In this chapter, we will:<a class="headerlink" href="#in-this-chapter-we-will" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Load example datasets</p></li>
-<li><p>Make scatter plots, bar plots, and box plots</p></li>
-<li><p>Use color (<code class="docutils literal notranslate"><span class="pre">hue</span></code>) and grouping (<code class="docutils literal notranslate"><span class="pre">col</span></code>, <code class="docutils literal notranslate"><span class="pre">row</span></code>) for deeper insights</p></li>
-</ol>
+<h1>Seaborn Tutorial<a class="headerlink" href="#seaborn-tutorial" title="Link to this heading">#</a></h1>
+<p>In this notebook, we will learn how to use Seaborn — a powerful Python library for creating beautiful, informative visualizations from biological data.</p>
+<section id="what-is-seaborn">
+<h2>What is Seaborn?<a class="headerlink" href="#what-is-seaborn" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Seaborn is built on top of matplotlib and makes it easier to create attractive charts.</p></li>
+<li><p>It’s especially great for exploring data patterns and statistical relationships.</p></li>
+<li><p>In biosciences, you might use Seaborn to visualize enzyme activity, protein expression, drug response curves, etc.</p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="let-s-get-started">
+<h1>Let’s get started!<a class="headerlink" href="#let-s-get-started" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import necessary libraries</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>        <span class="c1"># seaborn for visualization</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>          <span class="c1"># pandas for data handling</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>  <span class="c1"># matplotlib for displaying plots</span>
+
+<span class="c1"># Enable inline plotting (for Jupyter notebooks)</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 </div>
 </div>
@@ -531,7 +557,6 @@ document.write(`
 </table>
 </div></div></div>
 </div>
-</section>
 <section id="dataset-overview">
 <h2>Dataset Overview<a class="headerlink" href="#dataset-overview" title="Link to this heading">#</a></h2>
 <p>The <strong>tips</strong> dataset contains records of meals in a restaurant. It includes:</p>
@@ -606,7 +631,7 @@ document.write(`
 </div>
 </section>
 <section id="summary">
-<h2>✅ Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">sns.scatterplot()</span></code> shows the relationship between two variables.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">sns.boxplot()</span></code> shows distributions and outliers.</p></li>
@@ -616,10 +641,11 @@ document.write(`
 <p>Seaborn makes it quick to generate great-looking plots with minimal code.</p>
 </section>
 </section>
+<hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="seaborn-continued">
 <h1>Seaborn continued<a class="headerlink" href="#seaborn-continued" title="Link to this heading">#</a></h1>
 <section id="facetgrid-multiple-plots-by-category">
-<h2>🔹 1. FacetGrid: Multiple Plots by Category<a class="headerlink" href="#facetgrid-multiple-plots-by-category" title="Link to this heading">#</a></h2>
+<h2>1. FacetGrid: Multiple Plots by Category<a class="headerlink" href="#facetgrid-multiple-plots-by-category" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># FacetGrid: Create a grid of plots split by &#39;sex&#39;</span>
@@ -631,7 +657,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x2b488f2a120&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x20bafdf92b0&gt;
 </pre></div>
 </div>
 <img alt="../_images/7d89d0f751e260194ea9db06f7a2c049e12a06fa6c6ffe6eaf4c87d3e0003914.png" src="../_images/7d89d0f751e260194ea9db06f7a2c049e12a06fa6c6ffe6eaf4c87d3e0003914.png" />
@@ -639,7 +665,7 @@ document.write(`
 </div>
 </section>
 <section id="heatmap-correlation-between-numeric-columns">
-<h2>🔹 2. Heatmap: Correlation Between Numeric Columns<a class="headerlink" href="#heatmap-correlation-between-numeric-columns" title="Link to this heading">#</a></h2>
+<h2>2. Heatmap: Correlation Between Numeric Columns<a class="headerlink" href="#heatmap-correlation-between-numeric-columns" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute correlation matrix</span>
@@ -658,7 +684,7 @@ document.write(`
 </div>
 </section>
 <section id="regplot-scatter-plot-with-regression-line">
-<h2>🔹 3. Regplot: Scatter Plot with Regression Line<a class="headerlink" href="#regplot-scatter-plot-with-regression-line" title="Link to this heading">#</a></h2>
+<h2>3. Regplot: Scatter Plot with Regression Line<a class="headerlink" href="#regplot-scatter-plot-with-regression-line" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Scatterplot with a regression line</span>
@@ -669,16 +695,221 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/df13048dedae1435d1ef18baf02772c5d286c29333d95a3d874e269336b9adea.png" src="../_images/df13048dedae1435d1ef18baf02772c5d286c29333d95a3d874e269336b9adea.png" />
+<img alt="../_images/df9675189be68888077f56d266f6005c4ea966ab4ff18df75d5965d608db68f1.png" src="../_images/df9675189be68888077f56d266f6005c4ea966ab4ff18df75d5965d608db68f1.png" />
 </div>
 </div>
-<hr class="docutils" />
-<table style="width: 100%;">
-  <tr>
-    <td style="text-align: left;">By Ben Huang</td>
-    <td style="text-align: right;">© Copyright 2025.</td>
-  </tr>
+</section>
+<section id="example-dataset-simulated-protein-expression-data">
+<h2>Example Dataset: Simulated Protein Expression Data<a class="headerlink" href="#example-dataset-simulated-protein-expression-data" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s simulate a dataset of protein expression levels in different cell types</span>
+<span class="c1"># treated with various drugs.</span>
+
+<span class="c1"># We&#39;ll create a dataframe manually for simplicity.</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Cell_Type&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Neuron&#39;</span><span class="p">,</span> <span class="s1">&#39;Neuron&#39;</span><span class="p">,</span> <span class="s1">&#39;Neuron&#39;</span><span class="p">,</span> <span class="s1">&#39;Astrocyte&#39;</span><span class="p">,</span> <span class="s1">&#39;Astrocyte&#39;</span><span class="p">,</span> <span class="s1">&#39;Astrocyte&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="s1">&#39;Drug&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Drug A&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">6</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;Drug B&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">6</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;Drug C&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">6</span><span class="p">,</span>
+    <span class="s1">&#39;Protein_Level&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span>   <span class="c1"># Drug A</span>
+                      <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span>     <span class="c1"># Drug B</span>
+                      <span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">23</span><span class="p">]</span>   <span class="c1"># Drug C</span>
+<span class="p">}</span>
+
+<span class="c1"># Convert it into a pandas DataFrame</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Show the first few rows</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Cell_Type</th>
+      <th>Drug</th>
+      <th>Protein_Level</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Neuron</td>
+      <td>Drug A</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Neuron</td>
+      <td>Drug A</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Neuron</td>
+      <td>Drug A</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Astrocyte</td>
+      <td>Drug A</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Astrocyte</td>
+      <td>Drug A</td>
+      <td>22</td>
+    </tr>
+  </tbody>
 </table>
+</div></div></div>
+</div>
+</section>
+<section id="bar-plot-compare-mean-protein-levels-by-cell-type-and-drug">
+<h2>1. Bar Plot: Compare Mean Protein Levels by Cell Type and Drug<a class="headerlink" href="#bar-plot-compare-mean-protein-levels-by-cell-type-and-drug" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A bar plot is great for comparing the mean of different groups.</span>
+
+<span class="c1"># We&#39;ll use seaborn&#39;s barplot function:</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>  <span class="c1"># Set plot size</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Drug&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Protein_Level&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Cell_Type&#39;</span><span class="p">,</span> <span class="n">ci</span><span class="o">=</span><span class="s1">&#39;sd&#39;</span><span class="p">)</span>
+
+<span class="c1"># Add labels and title</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Mean Protein Expression by Drug and Cell Type&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Protein Level (arbitrary units)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Drug Treatment&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Cell Type&#39;</span><span class="p">)</span>
+
+<span class="c1"># Show the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\BenHuang\AppData\Local\Temp\ipykernel_25696\1113765033.py:5: FutureWarning: 
+
+The `ci` parameter is deprecated. Use `errorbar=&#39;sd&#39;` for the same effect.
+
+  sns.barplot(data=df, x=&#39;Drug&#39;, y=&#39;Protein_Level&#39;, hue=&#39;Cell_Type&#39;, ci=&#39;sd&#39;)
+</pre></div>
+</div>
+<img alt="../_images/813288c28a0396ce7acf049b327a367dd2b6f89296d3e9673779bb6cb0d54be1.png" src="../_images/813288c28a0396ce7acf049b327a367dd2b6f89296d3e9673779bb6cb0d54be1.png" />
+</div>
+</div>
+</section>
+<section id="box-plot-visualizing-distribution-of-protein-levels">
+<h2>2. Box Plot: Visualizing Distribution of Protein Levels<a class="headerlink" href="#box-plot-visualizing-distribution-of-protein-levels" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Box plots are useful for seeing data spread and identifying outliers.</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Drug&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Protein_Level&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Cell_Type&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Protein Expression Distribution by Drug&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Protein Level&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Drug&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Cell Type&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/236e2ab663275a42b1908e8688cf36d3eadfb1d1d7b0e7967033df8fba2d7777.png" src="../_images/236e2ab663275a42b1908e8688cf36d3eadfb1d1d7b0e7967033df8fba2d7777.png" />
+</div>
+</div>
+</section>
+<section id="swarm-plot-see-individual-data-points">
+<h2>3. Swarm Plot: See Individual Data Points<a class="headerlink" href="#swarm-plot-see-individual-data-points" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Swarm plots show each data point to reveal clustering and variation.</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">swarmplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Drug&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Protein_Level&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Cell_Type&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Protein Levels in Individual Samples&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Protein Level&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Drug&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/e7605cb155ea929a4b9ee41d3e5a11150370980ee7683a5c158614945cb21359.png" src="../_images/e7605cb155ea929a4b9ee41d3e5a11150370980ee7683a5c158614945cb21359.png" />
+</div>
+</div>
+</section>
+<section id="violin-plot-combination-of-box-distribution">
+<h2>4. Violin Plot: Combination of Box + Distribution<a class="headerlink" href="#violin-plot-combination-of-box-distribution" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A violin plot shows both the box plot and a kernel density estimate of the data.</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;Drug&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Protein_Level&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;Cell_Type&#39;</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Violin Plot of Protein Levels by Drug and Cell Type&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Protein Level&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Drug&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/586fe272975a5e67d410fc5f3643b3d8dfa48ca92ca8593a2084c5654ab1b64a.png" src="../_images/586fe272975a5e67d410fc5f3643b3d8dfa48ca92ca8593a2084c5654ab1b64a.png" />
+</div>
+</div>
+</section>
+<section id="heatmap-correlation-between-numeric-variables">
+<h2>5. Heatmap: Correlation Between Numeric Variables<a class="headerlink" href="#heatmap-correlation-between-numeric-variables" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s say we had a wider dataset — we can use heatmaps to show correlations.</span>
+
+<span class="c1"># For demo, let&#39;s add some synthetic variables</span>
+<span class="n">df_extended</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">df_extended</span><span class="p">[</span><span class="s1">&#39;GeneA&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">,</span> <span class="mf">1.6</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="n">df_extended</span><span class="p">[</span><span class="s1">&#39;GeneB&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.1</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="mf">3.1</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span>
+
+<span class="c1"># Compute correlation matrix</span>
+<span class="n">corr</span> <span class="o">=</span> <span class="n">df_extended</span><span class="p">[[</span><span class="s1">&#39;Protein_Level&#39;</span><span class="p">,</span> <span class="s1">&#39;GeneA&#39;</span><span class="p">,</span> <span class="s1">&#39;GeneB&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+
+<span class="c1"># Plot the heatmap</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">corr</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">,</span> <span class="n">square</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Correlation Matrix of Protein and Gene Expression&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/bd15520c39086cccaef5501a1c988f512ebce2bbdc05f533c5d2df271a845eac.png" src="../_images/bd15520c39086cccaef5501a1c988f512ebce2bbdc05f533c5d2df271a845eac.png" />
+</div>
+</div>
 </section>
 </section>
 
@@ -718,15 +949,15 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">📊 Matplotlib for Data Visualization</p>
+        <p class="prev-next-title">Plotting Experimental Data with matplotlib</p>
       </div>
     </a>
     <a class="right-next"
-       href="Scikit_learn.html"
+       href="Plotly.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">🤖 Scikit-learn for Machine Learning</p>
+        <p class="prev-next-title">Interactive Plotting with Plotly</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -746,20 +977,29 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">📊 Seaborn Tutorial</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-this-chapter-we-will">In this chapter, we will:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Seaborn Tutorial</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-seaborn">What is Seaborn?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-get-started">Let’s get started!</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-overview">Dataset Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plot">Scatter Plot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plot">Box Plot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-plot">Bar Plot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pair-plot">Pair Plot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">✅ Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#seaborn-continued">Seaborn continued</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#facetgrid-multiple-plots-by-category">🔹 1. FacetGrid: Multiple Plots by Category</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heatmap-correlation-between-numeric-columns">🔹 2. Heatmap: Correlation Between Numeric Columns</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regplot-scatter-plot-with-regression-line">🔹 3. Regplot: Scatter Plot with Regression Line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#facetgrid-multiple-plots-by-category">1. FacetGrid: Multiple Plots by Category</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heatmap-correlation-between-numeric-columns">2. Heatmap: Correlation Between Numeric Columns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regplot-scatter-plot-with-regression-line">3. Regplot: Scatter Plot with Regression Line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-dataset-simulated-protein-expression-data">Example Dataset: Simulated Protein Expression Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-plot-compare-mean-protein-levels-by-cell-type-and-drug">1. Bar Plot: Compare Mean Protein Levels by Cell Type and Drug</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plot-visualizing-distribution-of-protein-levels">2. Box Plot: Visualizing Distribution of Protein Levels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#swarm-plot-see-individual-data-points">3. Swarm Plot: See Individual Data Points</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#violin-plot-combination-of-box-distribution">4. Violin Plot: Combination of Box + Distribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heatmap-correlation-between-numeric-variables">5. Heatmap: Correlation Between Numeric Variables</a></li>
 </ul>
 </li>
 </ul>
@@ -777,7 +1017,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By Ben Huang
+By Ben Huang with the help of Gabby Li
 </p>
 
   </div>
@@ -787,7 +1027,7 @@ By Ben Huang
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2025.
       <br/>
     
   </p>

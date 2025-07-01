@@ -2,7 +2,8 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: Data Analysis with Python
-author: Ben Huang
+author: Ben Huang with the help of Gabby Li
+copyright: "2025"  # Copyright year to be placed in the footer
 logo: logo.png
 only_build_toc_files: true
 # Force re-execution of notebooks on each build.
@@ -28,6 +29,6 @@ repository:
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
+  favicon                   : "favicon.png"  # A path to a favicon image
   use_issues_button: true
   use_repository_button: true
-  copyright: "© 2025 Ben Huang"
