@@ -1,17 +1,28 @@
-# Welcome to the Data Analysis Book
 
-This Jupyter Book is an interactive learning resource designed to help you explore essential tools and techniques for data analysis using Python.
+#  Welcome to Python for Biochemistry
 
-Whether you're a beginner or brushing up your skills, this book will guide you through practical examples with clear code, visualizations, and explanations.
+This interactive textbook introduces you to Python programming through real bioscience examples. You don’t need any prior coding experience — just curiosity and a basic understanding of lab data.
 
-## What You’ll Learn
+## What You'll Learn
 
-- How to use Python libraries for working with data
-- Creating clear and beautiful plots using Seaborn and Matplotlib
-- Exploring datasets using pandas
-- Visualizing trends and patterns through plots like box plots, bar charts, scatter plots, and heatmaps
-- Structuring analysis projects in Jupyter Notebooks
+- How to use Python to clean, analyze, and visualize experimental data
+- Which libraries are best for specific bioscience tasks
+- How to build simple models like linear regression and clustering
 
-## Chapters
+## Real-World Applications
 
-Each chapter in this book is focused on a specific tool or technique. Examples are drawn from real-world datasets and are presented in an easy-to-follow notebook format.
+Each chapter includes a hands-on example based on biochemistry, such as:
+
+- Tracking enzyme activity over time
+- Analyzing protein concentrations from ELISA
+- Fitting curves to reaction data
+- Exploring genetic sequences with Biopython
+- Classifying samples with machine learning
+
+## How to Use This Book
+
+- Work through the chapters in order, or skip to the tools you need.
+- Run each code cell to see the output.
+- All explanations are written for absolute beginners.
+
+Let's get started!

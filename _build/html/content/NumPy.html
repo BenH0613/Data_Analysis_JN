@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>📘 NumPy Tutorial: Numerical Foundations for Data Analysis &#8212; Data Analysis with Python</title>
+    <title>Introduction to NumPy &#8212; Data Analysis with Python</title>
   
   
   
@@ -58,10 +58,11 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/NumPy';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="📘 SciPy for Scientific Computing" href="SciPy.html" />
-    <link rel="prev" title="Welcome to the Data Analysis Book" href="../intro.html" />
+    <link rel="next" title="Introduction to pandas" href="Pandas.html" />
+    <link rel="prev" title="Welcome to Python for Biochemistry" href="../intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -175,28 +176,36 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    Welcome to the Data Analysis Book
+                    Welcome to Python for Biochemistry
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">🧮 Numerical Foundations</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Core Data Handling</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">📘 NumPy Tutorial: Numerical Foundations for Data Analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SciPy.html">📘 SciPy for Scientific Computing</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">NumPy: Working with Numerical Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Pandas.html">Pandas: Organizing and Analyzing Tabular Data</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">🗃️ Data Handling</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Visualization</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Pandas.html">🐼 Pandas for Data Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Matplotlib.html">Matplotlib: Visualizing Scientific Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Seaborn.html">Seaborn Tutorial</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="Plotly.html">Plotly: Interactive Data Visualization</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">📊 Data Visualization</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Scientific &amp; Statistical Analysis</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Matplotlib.html">📊 Matplotlib for Data Visualization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Seaborn.html">📊 Seaborn Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SciPy.html">SciPy for Scientific Computing</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Statsmodels.html">Statsmodels: In-Depth Statistical Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sympy.html">SymPy Tutorial</a></li>
 
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">🤖 Machine Learning</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bioinformatics &amp; Machine Learning</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Scikit_learn.html">🤖 Scikit-learn for Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Biopython.html">Biopython: Tools for Biological Computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Scikit_learn.html">Introduction to Scikit-learn</a></li>
+
 </ul>
 
     </div>
@@ -382,7 +391,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>📘 NumPy Tutorial: Numerical Foundations for Data Analysis</h1>
+    <h1>Introduction to NumPy</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -392,19 +401,24 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-numpy">✨ What is NumPy?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-numpy">📦 Importing NumPy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-arrays">🔢 Creating Arrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-numpy">What is NumPy?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-this-chapter-youll-learn-how-to">In this chapter, you’ll learn how to:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-introduction-to-useful-numpy-syntax">Quick Introduction to Useful NumPy Syntax</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-arrays">Creating Arrays</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-python-lists">From Python lists:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multidimensional-array">Multidimensional array:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-attributes">🧱 Array Attributes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-arrays-with-defaults">🛠️ Creating Arrays with Defaults</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-indexing-and-slicing">📐 Array Indexing and Slicing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vectorized-operations">🔁 Vectorized Operations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-functions">🧮 Mathematical Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reshaping-and-transposing">🔄 Reshaping and Transposing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-attributes">Array Attributes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-arrays-with-defaults">Creating Arrays with Defaults</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-indexing-and-slicing">Array Indexing and Slicing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vectorized-operations">Vectorized Operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-functions">Mathematical Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reshaping-and-transposing">Reshaping and Transposing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-protein-concentration-measurements">Example 1: Protein Concentration Measurements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-enzyme-activity-over-time">Example 2: Enzyme Activity Over Time</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-dna-melting-temperature-vs-salt-concentration">Example 3: DNA Melting Temperature vs. Salt Concentration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
             </nav>
         </div>
@@ -416,19 +430,56 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="numpy-tutorial-numerical-foundations-for-data-analysis">
-<h1>📘 NumPy Tutorial: Numerical Foundations for Data Analysis<a class="headerlink" href="#numpy-tutorial-numerical-foundations-for-data-analysis" title="Link to this heading">#</a></h1>
-<hr class="docutils" />
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-numpy">
+<h1>Introduction to NumPy<a class="headerlink" href="#introduction-to-numpy" title="Link to this heading">#</a></h1>
+<p>Welcome to your first step in learning data analysis with Python!</p>
 <section id="what-is-numpy">
-<h2>✨ What is NumPy?<a class="headerlink" href="#what-is-numpy" title="Link to this heading">#</a></h2>
-<p>NumPy (Numerical Python) is a foundational package for numerical computing in Python. It provides fast, memory-efficient arrays and a rich set of operations to manipulate them.</p>
+<h2>What is NumPy?<a class="headerlink" href="#what-is-numpy" title="Link to this heading">#</a></h2>
+<p>NumPy (Numerical Python) is a powerful library that lets you:</p>
+<ul class="simple">
+<li><p>Work efficiently with numerical data</p></li>
+<li><p>Store data in arrays (like tables of numbers)</p></li>
+<li><p>Perform fast calculations and statistics</p></li>
+<li><p>Analyze experimental data in biology and chemistry</p></li>
+</ul>
+<blockquote>
+<div><p>NumPy is fast and efficient because it stores data in compact arrays and performs operations on entire datasets at once — no loops needed.</p>
+</div></blockquote>
+<hr class="docutils" />
+</section>
+<section id="in-this-chapter-youll-learn-how-to">
+<h2>In this chapter, you’ll learn how to:<a class="headerlink" href="#in-this-chapter-youll-learn-how-to" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Create and use NumPy arrays</p></li>
+<li><p>Perform basic math and statistics</p></li>
+<li><p>Analyze real-world data like protein concentrations and enzyme activity</p></li>
+</ol>
+<br>
 </section>
 <hr class="docutils" />
-<section id="importing-numpy">
-<h2>📦 Importing NumPy<a class="headerlink" href="#importing-numpy" title="Link to this heading">#</a></h2>
+<section id="quick-introduction-to-useful-numpy-syntax">
+<h2>Quick Introduction to Useful NumPy Syntax<a class="headerlink" href="#quick-introduction-to-useful-numpy-syntax" title="Link to this heading">#</a></h2>
+<p>Before we jump into real examples, here are some of the most common things you’ll do with NumPy:</p>
+<ul class="simple">
+<li><p><strong>Creating arrays</strong><br />
+<code class="docutils literal notranslate"><span class="pre">np.array([1,</span> <span class="pre">2,</span> <span class="pre">3])</span></code> → turns a Python list into a NumPy array</p></li>
+<li><p><strong>Generating ranges of numbers</strong><br />
+<code class="docutils literal notranslate"><span class="pre">np.arange(0,</span> <span class="pre">10,</span> <span class="pre">2)</span></code> → <code class="docutils literal notranslate"><span class="pre">[0</span> <span class="pre">2</span> <span class="pre">4</span> <span class="pre">6</span> <span class="pre">8]</span></code></p></li>
+<li><p><strong>Basic math operations (element-wise)</strong><br />
+<code class="docutils literal notranslate"><span class="pre">array</span> <span class="pre">*</span> <span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">array</span> <span class="pre">+</span> <span class="pre">5</span></code>, <code class="docutils literal notranslate"><span class="pre">array</span> <span class="pre">/</span> <span class="pre">10</span></code> → applies to every element automatically</p></li>
+<li><p><strong>Useful stats functions</strong><br />
+<code class="docutils literal notranslate"><span class="pre">np.mean(array)</span></code>, <code class="docutils literal notranslate"><span class="pre">np.std(array)</span></code>, <code class="docutils literal notranslate"><span class="pre">np.min(array)</span></code>, <code class="docutils literal notranslate"><span class="pre">np.max(array)</span></code></p></li>
+<li><p><strong>Differences between values</strong><br />
+<code class="docutils literal notranslate"><span class="pre">np.diff(array)</span></code> → calculates the difference between each pair of elements</p></li>
+<li><p><strong>Unit conversion</strong><br />
+You can convert values easily:<br />
+<code class="docutils literal notranslate"><span class="pre">nmol</span> <span class="pre">=</span> <span class="pre">umol_array</span> <span class="pre">*</span> <span class="pre">1000</span></code></p></li>
+</ul>
+<p>These are the building blocks we’ll use in the following biochemistry examples.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First, import NumPy</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 </pre></div>
 </div>
 </div>
@@ -436,7 +487,7 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="creating-arrays">
-<h2>🔢 Creating Arrays<a class="headerlink" href="#creating-arrays" title="Link to this heading">#</a></h2>
+<h2>Creating Arrays<a class="headerlink" href="#creating-arrays" title="Link to this heading">#</a></h2>
 <section id="from-python-lists">
 <h3>From Python lists:<a class="headerlink" href="#from-python-lists" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
@@ -474,7 +525,7 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="array-attributes">
-<h2>🧱 Array Attributes<a class="headerlink" href="#array-attributes" title="Link to this heading">#</a></h2>
+<h2>Array Attributes<a class="headerlink" href="#array-attributes" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>      <span class="c1"># Shape of array</span>
@@ -494,7 +545,7 @@ int64
 </section>
 <hr class="docutils" />
 <section id="creating-arrays-with-defaults">
-<h2>🛠️ Creating Arrays with Defaults<a class="headerlink" href="#creating-arrays-with-defaults" title="Link to this heading">#</a></h2>
+<h2>Creating Arrays with Defaults<a class="headerlink" href="#creating-arrays-with-defaults" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>        <span class="c1"># 2x3 array of zeros</span>
@@ -513,7 +564,7 @@ int64
 </section>
 <hr class="docutils" />
 <section id="array-indexing-and-slicing">
-<h2>📐 Array Indexing and Slicing<a class="headerlink" href="#array-indexing-and-slicing" title="Link to this heading">#</a></h2>
+<h2>Array Indexing and Slicing<a class="headerlink" href="#array-indexing-and-slicing" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">])</span>
@@ -535,7 +586,7 @@ int64
 </section>
 <hr class="docutils" />
 <section id="vectorized-operations">
-<h2>🔁 Vectorized Operations<a class="headerlink" href="#vectorized-operations" title="Link to this heading">#</a></h2>
+<h2>Vectorized Operations<a class="headerlink" href="#vectorized-operations" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
@@ -554,7 +605,7 @@ int64
 </section>
 <hr class="docutils" />
 <section id="mathematical-functions">
-<h2>🧮 Mathematical Functions<a class="headerlink" href="#mathematical-functions" title="Link to this heading">#</a></h2>
+<h2>Mathematical Functions<a class="headerlink" href="#mathematical-functions" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
@@ -574,7 +625,7 @@ int64
 </section>
 <hr class="docutils" />
 <section id="reshaping-and-transposing">
-<h2>🔄 Reshaping and Transposing<a class="headerlink" href="#reshaping-and-transposing" title="Link to this heading">#</a></h2>
+<h2>Reshaping and Transposing<a class="headerlink" href="#reshaping-and-transposing" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># 2 rows, 3 columns</span>
@@ -594,6 +645,158 @@ int64
 </div>
 </div>
 </div>
+</section>
+<hr class="docutils" />
+<section id="example-1-protein-concentration-measurements">
+<h2>Example 1: Protein Concentration Measurements<a class="headerlink" href="#example-1-protein-concentration-measurements" title="Link to this heading">#</a></h2>
+<p>Let’s say you’ve measured the concentration of a protein (in mg/mL) in several different samples.</p>
+<p>We’ll use a NumPy array to store and analyze these values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a NumPy array of protein concentrations (mg/mL)</span>
+<span class="n">protein_conc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">,</span> <span class="mf">1.9</span><span class="p">,</span> <span class="mf">2.6</span><span class="p">])</span>
+
+<span class="c1"># Print the raw data</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Protein concentrations (mg/mL):&quot;</span><span class="p">,</span> <span class="n">protein_conc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Protein concentrations (mg/mL): [1.2 2.5 2.3 1.8 2.1 1.9 2.6]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate the average (mean) concentration</span>
+<span class="n">mean_conc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">protein_conc</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mean concentration:&quot;</span><span class="p">,</span> <span class="n">mean_conc</span><span class="p">)</span>
+
+<span class="c1"># Calculate the standard deviation (spread of values)</span>
+<span class="n">std_conc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">protein_conc</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Standard deviation:&quot;</span><span class="p">,</span> <span class="n">std_conc</span><span class="p">)</span>
+
+<span class="c1"># Find the maximum and minimum values</span>
+<span class="n">max_conc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">protein_conc</span><span class="p">)</span>
+<span class="n">min_conc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">protein_conc</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Max concentration:&quot;</span><span class="p">,</span> <span class="n">max_conc</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Min concentration:&quot;</span><span class="p">,</span> <span class="n">min_conc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean concentration: 2.0571428571428574
+Standard deviation: 0.4435478484645721
+Max concentration: 2.6
+Min concentration: 1.2
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="example-2-enzyme-activity-over-time">
+<h2>Example 2: Enzyme Activity Over Time<a class="headerlink" href="#example-2-enzyme-activity-over-time" title="Link to this heading">#</a></h2>
+<p>Suppose you’re studying an enzyme reaction and you measure activity (µmol/min) every 5 minutes.</p>
+<p>Let’s store the time and activity data and calculate the rate of change (how fast the reaction speeds up).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Time in minutes and enzyme activity in µmol/min</span>
+<span class="n">time_minutes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">])</span>
+<span class="n">enzyme_activity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">,</span> <span class="mf">4.1</span><span class="p">,</span> <span class="mf">5.8</span><span class="p">,</span> <span class="mf">7.2</span><span class="p">,</span> <span class="mf">7.9</span><span class="p">,</span> <span class="mf">8.1</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Time (minutes):&quot;</span><span class="p">,</span> <span class="n">time_minutes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Enzyme activity (µmol/min):&quot;</span><span class="p">,</span> <span class="n">enzyme_activity</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time (minutes): [ 0  5 10 15 20 25 30]
+Enzyme activity (µmol/min): [0.  2.3 4.1 5.8 7.2 7.9 8.1]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate the rate of change between time points (Δactivity / Δtime)</span>
+<span class="n">rate_of_change</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">enzyme_activity</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">time_minutes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rate of change (µmol/min per minute):&quot;</span><span class="p">,</span> <span class="n">rate_of_change</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rate of change (µmol/min per minute): [0.46 0.36 0.34 0.28 0.14 0.04]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert activity to nmol/min (1 µmol = 1000 nmol)</span>
+<span class="n">enzyme_activity_nmol</span> <span class="o">=</span> <span class="n">enzyme_activity</span> <span class="o">*</span> <span class="mi">1000</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Enzyme activity in nmol/min:&quot;</span><span class="p">,</span> <span class="n">enzyme_activity_nmol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Enzyme activity in nmol/min: [   0. 2300. 4100. 5800. 7200. 7900. 8100.]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="example-3-dna-melting-temperature-vs-salt-concentration">
+<h2>Example 3: DNA Melting Temperature vs. Salt Concentration<a class="headerlink" href="#example-3-dna-melting-temperature-vs-salt-concentration" title="Link to this heading">#</a></h2>
+<p>DNA melting temperature (Tm) depends on salt concentration. We’ll simulate this relationship.</p>
+<p>Here’s how Tm changes at different NaCl concentrations.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Salt concentration in mM and DNA Tm in °C</span>
+<span class="n">salt_conc_mM</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">250</span><span class="p">])</span>
+<span class="n">tm_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">65.2</span><span class="p">,</span> <span class="mf">67.5</span><span class="p">,</span> <span class="mf">68.9</span><span class="p">,</span> <span class="mf">70.1</span><span class="p">,</span> <span class="mf">71.0</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Salt concentrations (mM):&quot;</span><span class="p">,</span> <span class="n">salt_conc_mM</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Melting temperatures (°C):&quot;</span><span class="p">,</span> <span class="n">tm_values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Salt concentrations (mM): [ 50 100 150 200 250]
+Melting temperatures (°C): [65.2 67.5 68.9 70.1 71. ]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate the Tm increase between each salt step</span>
+<span class="n">delta_tm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">tm_values</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Increase in Tm between salt steps (°C):&quot;</span><span class="p">,</span> <span class="n">delta_tm</span><span class="p">)</span>
+
+<span class="c1"># Average increase per 50 mM</span>
+<span class="n">avg_increase_per_50mM</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">delta_tm</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Average increase per 50 mM NaCl:&quot;</span><span class="p">,</span> <span class="n">avg_increase_per_50mM</span><span class="p">,</span> <span class="s2">&quot;°C&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Increase in Tm between salt steps (°C): [2.3 1.4 1.2 0.9]
+Average increase per 50 mM NaCl: 1.4499999999999993 °C
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<p>In this chapter, you learned how to:</p>
+<ul class="simple">
+<li><p>Use NumPy to store experimental data in arrays</p></li>
+<li><p>Calculate basic statistics (mean, std, max, min)</p></li>
+<li><p>Compute differences and apply unit conversions</p></li>
+<li><p>Analyze bioscience data like enzyme activity and DNA melting temperatures</p></li>
+</ul>
 </section>
 </section>
 
@@ -633,15 +836,15 @@ int64
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Welcome to the Data Analysis Book</p>
+        <p class="prev-next-title">Welcome to Python for Biochemistry</p>
       </div>
     </a>
     <a class="right-next"
-       href="SciPy.html"
+       href="Pandas.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">📘 SciPy for Scientific Computing</p>
+        <p class="prev-next-title">Introduction to pandas</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -661,19 +864,24 @@ int64
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-numpy">✨ What is NumPy?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-numpy">📦 Importing NumPy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-arrays">🔢 Creating Arrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-numpy">What is NumPy?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-this-chapter-youll-learn-how-to">In this chapter, you’ll learn how to:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-introduction-to-useful-numpy-syntax">Quick Introduction to Useful NumPy Syntax</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-arrays">Creating Arrays</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-python-lists">From Python lists:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multidimensional-array">Multidimensional array:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-attributes">🧱 Array Attributes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-arrays-with-defaults">🛠️ Creating Arrays with Defaults</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-indexing-and-slicing">📐 Array Indexing and Slicing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vectorized-operations">🔁 Vectorized Operations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-functions">🧮 Mathematical Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reshaping-and-transposing">🔄 Reshaping and Transposing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-attributes">Array Attributes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-arrays-with-defaults">Creating Arrays with Defaults</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-indexing-and-slicing">Array Indexing and Slicing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vectorized-operations">Vectorized Operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-functions">Mathematical Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reshaping-and-transposing">Reshaping and Transposing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-protein-concentration-measurements">Example 1: Protein Concentration Measurements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-enzyme-activity-over-time">Example 2: Enzyme Activity Over Time</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-dna-melting-temperature-vs-salt-concentration">Example 3: DNA Melting Temperature vs. Salt Concentration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
   </nav></div>
 
@@ -688,7 +896,7 @@ int64
   <div class="footer-item">
     
 <p class="component-author">
-By Ben Huang
+By Ben Huang with the help of Gabby Li
 </p>
 
   </div>
@@ -698,7 +906,7 @@ By Ben Huang
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2025.
       <br/>
     
   </p>

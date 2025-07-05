@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>📘 SciPy for Scientific Computing &#8212; Data Analysis with Python</title>
+    <title>SciPy for Scientific Computing &#8212; Data Analysis with Python</title>
   
   
   
@@ -60,10 +60,11 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/SciPy';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="🐼 Pandas for Data Analysis" href="Pandas.html" />
-    <link rel="prev" title="📘 NumPy Tutorial: Numerical Foundations for Data Analysis" href="NumPy.html" />
+    <link rel="next" title="Statistical Modeling with statsmodels" href="Statsmodels.html" />
+    <link rel="prev" title="Interactive Plotting with Plotly" href="Plotly.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -177,28 +178,36 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    Welcome to the Data Analysis Book
+                    Welcome to Python for Biochemistry
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">🧮 Numerical Foundations</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Core Data Handling</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="NumPy.html">NumPy: Working with Numerical Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Pandas.html">Pandas: Organizing and Analyzing Tabular Data</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Visualization</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Matplotlib.html">Matplotlib: Visualizing Scientific Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Seaborn.html">Seaborn Tutorial</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="Plotly.html">Plotly: Interactive Data Visualization</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Scientific &amp; Statistical Analysis</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="NumPy.html">📘 NumPy Tutorial: Numerical Foundations for Data Analysis</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">📘 SciPy for Scientific Computing</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">🗃️ Data Handling</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Pandas.html">🐼 Pandas for Data Analysis</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">📊 Data Visualization</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Matplotlib.html">📊 Matplotlib for Data Visualization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Seaborn.html">📊 Seaborn Tutorial</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">SciPy for Scientific Computing</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Statsmodels.html">Statsmodels: In-Depth Statistical Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sympy.html">SymPy Tutorial</a></li>
 
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">🤖 Machine Learning</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bioinformatics &amp; Machine Learning</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Scikit_learn.html">🤖 Scikit-learn for Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Biopython.html">Biopython: Tools for Biological Computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Scikit_learn.html">Introduction to Scikit-learn</a></li>
+
 </ul>
 
     </div>
@@ -384,7 +393,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>📘 SciPy for Scientific Computing</h1>
+    <h1>SciPy for Scientific Computing</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -394,13 +403,25 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-solving-equations">🎯 Example 1: Solving Equations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-integration">📈 Example 2: Integration</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-interpolation">🔁 Example 3: Interpolation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-4-statistical-tests">📊 Example 4: Statistical Tests</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-challenge">🧪 Practice Challenge</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">✅ Summary</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">SciPy for Scientific Computing</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-scipy">What is SciPy?</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-get-started">Let’s get started!</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-solving-equations">Example 1: Solving Equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-integration">Example 2: Integration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-interpolation">Example 3: Interpolation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-4-statistical-tests">Example 4: Statistical Tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-5-t-test-compare-two-sample-groups">Example 5: t-test — Compare Two Sample Groups</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-6-curve-fitting-enzyme-kinetics">Example 6: Curve Fitting (Enzyme Kinetics)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-7-correlation-between-two-variables">Example 7: Correlation Between Two Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-8-anova-compare-more-than-two-groups">Example 8: ANOVA (Compare More Than Two Groups)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-challenge">Practice Challenge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -412,18 +433,36 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="scipy-for-scientific-computing">
-<h1>📘 SciPy for Scientific Computing<a class="headerlink" href="#scipy-for-scientific-computing" title="Link to this heading">#</a></h1>
-<p>SciPy is a powerful Python library built on top of NumPy. It provides tools for scientific and technical computing, including optimization, integration, interpolation, linear algebra, and statistics.</p>
+<h1>SciPy for Scientific Computing<a class="headerlink" href="#scipy-for-scientific-computing" title="Link to this heading">#</a></h1>
+<p>In this notebook, we’ll explore how to use SciPy — a powerful library for scientific computing, statistics, and data analysis in Python.</p>
+<section id="what-is-scipy">
+<h2>What is SciPy?<a class="headerlink" href="#what-is-scipy" title="Link to this heading">#</a></h2>
+<p>SciPy (Scientific Python) builds on NumPy and provides tools for:</p>
+<ul class="simple">
+<li><p>Curve fitting (e.g. enzyme kinetics)</p></li>
+<li><p>Statistical tests (e.g. comparing treatment groups)</p></li>
+<li><p>Signal processing (e.g. filtering absorbance data)</p></li>
+<li><p>Optimization (e.g. minimizing cost functions)</p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="let-s-get-started">
+<h1>Let’s get started!<a class="headerlink" href="#let-s-get-started" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span><span class="p">,</span> <span class="n">integrate</span><span class="p">,</span> <span class="n">optimize</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">stats</span>   <span class="c1"># For statistical tests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">opt</span> <span class="c1"># For curve fitting</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>  <span class="c1"># For plotting</span>
+
+<span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 </div>
 </div>
 </div>
 <section id="example-1-solving-equations">
-<h2>🎯 Example 1: Solving Equations<a class="headerlink" href="#example-1-solving-equations" title="Link to this heading">#</a></h2>
+<h2>Example 1: Solving Equations<a class="headerlink" href="#example-1-solving-equations" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">fsolve</span>
@@ -444,7 +483,7 @@ document.write(`
 </div>
 </section>
 <section id="example-2-integration">
-<h2>📈 Example 2: Integration<a class="headerlink" href="#example-2-integration" title="Link to this heading">#</a></h2>
+<h2>Example 2: Integration<a class="headerlink" href="#example-2-integration" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.integrate</span><span class="w"> </span><span class="kn">import</span> <span class="n">quad</span>
@@ -462,7 +501,7 @@ document.write(`
 </div>
 </section>
 <section id="example-3-interpolation">
-<h2>🔁 Example 3: Interpolation<a class="headerlink" href="#example-3-interpolation" title="Link to this heading">#</a></h2>
+<h2>Example 3: Interpolation<a class="headerlink" href="#example-3-interpolation" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.interpolate</span><span class="w"> </span><span class="kn">import</span> <span class="n">interp1d</span>
@@ -488,7 +527,7 @@ document.write(`
 </div>
 </section>
 <section id="example-4-statistical-tests">
-<h2>📊 Example 4: Statistical Tests<a class="headerlink" href="#example-4-statistical-tests" title="Link to this heading">#</a></h2>
+<h2>Example 4: Statistical Tests<a class="headerlink" href="#example-4-statistical-tests" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
@@ -501,15 +540,134 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T-statistic: 0.9493099731786437
-P-value: 0.3426925723722509
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T-statistic: -0.5948144983949888
+P-value: 0.5521021698351766
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="example-5-t-test-compare-two-sample-groups">
+<h2>Example 5: t-test — Compare Two Sample Groups<a class="headerlink" href="#example-5-t-test-compare-two-sample-groups" title="Link to this heading">#</a></h2>
+<p>Let’s say you’re comparing protein concentration in two cell treatments.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simulate protein concentrations (in µg/mL)</span>
+<span class="n">control</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mf">1.6</span><span class="p">]</span>
+<span class="n">treated</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.8</span><span class="p">,</span> <span class="mf">1.9</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">]</span>
+
+<span class="c1"># Perform a two-sample t-test</span>
+<span class="n">t_stat</span><span class="p">,</span> <span class="n">p_value</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">control</span><span class="p">,</span> <span class="n">treated</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;t-statistic:&quot;</span><span class="p">,</span> <span class="n">t_stat</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p-value:&quot;</span><span class="p">,</span> <span class="n">p_value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>t-statistic: -4.999999999999998
+p-value: 0.001052825793366541
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="example-6-curve-fitting-enzyme-kinetics">
+<h2>Example 6: Curve Fitting (Enzyme Kinetics)<a class="headerlink" href="#example-6-curve-fitting-enzyme-kinetics" title="Link to this heading">#</a></h2>
+<p>We’ll use SciPy to fit the Michaelis-Menten equation to simulated enzyme data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Substrate concentrations [S] (mM)</span>
+<span class="n">substrate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<span class="c1"># Measured reaction rates (v)</span>
+<span class="n">velocity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.20</span><span class="p">,</span> <span class="mf">0.35</span><span class="p">,</span> <span class="mf">0.50</span><span class="p">,</span> <span class="mf">0.67</span><span class="p">,</span> <span class="mf">0.72</span><span class="p">])</span>
+
+<span class="c1"># Define the Michaelis-Menten function</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">michaelis_menten</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">Vmax</span><span class="p">,</span> <span class="n">Km</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">Vmax</span> <span class="o">*</span> <span class="n">S</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">Km</span> <span class="o">+</span> <span class="n">S</span><span class="p">)</span>
+
+<span class="c1"># Use curve_fit to estimate Vmax and Km</span>
+<span class="n">params</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">opt</span><span class="o">.</span><span class="n">curve_fit</span><span class="p">(</span><span class="n">michaelis_menten</span><span class="p">,</span> <span class="n">substrate</span><span class="p">,</span> <span class="n">velocity</span><span class="p">)</span>
+
+<span class="n">Vmax_est</span><span class="p">,</span> <span class="n">Km_est</span> <span class="o">=</span> <span class="n">params</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Estimated Vmax:&quot;</span><span class="p">,</span> <span class="n">Vmax_est</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Estimated Km:&quot;</span><span class="p">,</span> <span class="n">Km_est</span><span class="p">)</span>
+
+<span class="c1"># Plot the fit</span>
+<span class="n">S_fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">v_fit</span> <span class="o">=</span> <span class="n">michaelis_menten</span><span class="p">(</span><span class="n">S_fit</span><span class="p">,</span> <span class="n">Vmax_est</span><span class="p">,</span> <span class="n">Km_est</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">substrate</span><span class="p">,</span> <span class="n">velocity</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">S_fit</span><span class="p">,</span> <span class="n">v_fit</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Fit&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;[S] (mM)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Velocity (units)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Michaelis-Menten Curve Fit&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Estimated Vmax: 0.8399593718658945
+Estimated Km: 1.4204547608083617
+</pre></div>
+</div>
+<img alt="../_images/4be0105129844319f4c3fa486789b8dfd93230db6d4c6a2f030d5a1dfda55d1b.png" src="../_images/4be0105129844319f4c3fa486789b8dfd93230db6d4c6a2f030d5a1dfda55d1b.png" />
+</div>
+</div>
+</section>
+<section id="example-7-correlation-between-two-variables">
+<h2>Example 7: Correlation Between Two Variables<a class="headerlink" href="#example-7-correlation-between-two-variables" title="Link to this heading">#</a></h2>
+<p>Suppose you measured protein expression and RNA expression across samples:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">protein</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.1</span><span class="p">,</span> <span class="mf">2.4</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.8</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<span class="n">rna</span> <span class="o">=</span>     <span class="p">[</span><span class="mf">1.9</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="mf">2.4</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">,</span> <span class="mf">3.1</span><span class="p">]</span>
+
+<span class="c1"># Pearson correlation</span>
+<span class="n">corr</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">protein</span><span class="p">,</span> <span class="n">rna</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correlation coefficient (r):&quot;</span><span class="p">,</span> <span class="n">corr</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p-value:&quot;</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Correlation coefficient (r): 0.991591235137846
+p-value: 0.0009244504317239711
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="example-8-anova-compare-more-than-two-groups">
+<h2>Example 8: ANOVA (Compare More Than Two Groups)<a class="headerlink" href="#example-8-anova-compare-more-than-two-groups" title="Link to this heading">#</a></h2>
+<p>You have 3 drug treatments and want to know if they differ in enzyme activity.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simulate activity levels</span>
+<span class="n">drug_A</span> <span class="o">=</span> <span class="p">[</span><span class="mf">5.1</span><span class="p">,</span> <span class="mf">5.3</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">5.2</span><span class="p">]</span>
+<span class="n">drug_B</span> <span class="o">=</span> <span class="p">[</span><span class="mf">6.0</span><span class="p">,</span> <span class="mf">6.2</span><span class="p">,</span> <span class="mf">6.1</span><span class="p">,</span> <span class="mf">6.3</span><span class="p">]</span>
+<span class="n">drug_C</span> <span class="o">=</span> <span class="p">[</span><span class="mf">4.8</span><span class="p">,</span> <span class="mf">4.9</span><span class="p">,</span> <span class="mf">4.7</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">]</span>
+
+<span class="c1"># One-way ANOVA test</span>
+<span class="n">f_stat</span><span class="p">,</span> <span class="n">p_value</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">f_oneway</span><span class="p">(</span><span class="n">drug_A</span><span class="p">,</span> <span class="n">drug_B</span><span class="p">,</span> <span class="n">drug_C</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;F-statistic:&quot;</span><span class="p">,</span> <span class="n">f_stat</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p-value:&quot;</span><span class="p">,</span> <span class="n">p_value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>F-statistic: 111.20000000000006
+p-value: 4.5129050551885145e-07
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="practice-challenge">
-<h2>🧪 Practice Challenge<a class="headerlink" href="#practice-challenge" title="Link to this heading">#</a></h2>
+<h2>Practice Challenge<a class="headerlink" href="#practice-challenge" title="Link to this heading">#</a></h2>
 <p>Use <code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code> to find the minimum of the function <span class="math notranslate nohighlight">\(f(x) = x^2 + 2x + 1\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -531,7 +689,7 @@ P-value: 0.3426925723722509
 </div>
 </section>
 <section id="summary">
-<h2>✅ Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code> → root finding, minimization</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code> → definite integrals</p></li>
@@ -575,20 +733,20 @@ P-value: 0.3426925723722509
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="NumPy.html"
+       href="Plotly.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">📘 NumPy Tutorial: Numerical Foundations for Data Analysis</p>
+        <p class="prev-next-title">Interactive Plotting with Plotly</p>
       </div>
     </a>
     <a class="right-next"
-       href="Pandas.html"
+       href="Statsmodels.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">🐼 Pandas for Data Analysis</p>
+        <p class="prev-next-title">Statistical Modeling with statsmodels</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -608,13 +766,25 @@ P-value: 0.3426925723722509
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-solving-equations">🎯 Example 1: Solving Equations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-integration">📈 Example 2: Integration</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-interpolation">🔁 Example 3: Interpolation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-4-statistical-tests">📊 Example 4: Statistical Tests</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-challenge">🧪 Practice Challenge</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">✅ Summary</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">SciPy for Scientific Computing</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-scipy">What is SciPy?</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-get-started">Let’s get started!</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-solving-equations">Example 1: Solving Equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-integration">Example 2: Integration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-interpolation">Example 3: Interpolation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-4-statistical-tests">Example 4: Statistical Tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-5-t-test-compare-two-sample-groups">Example 5: t-test — Compare Two Sample Groups</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-6-curve-fitting-enzyme-kinetics">Example 6: Curve Fitting (Enzyme Kinetics)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-7-correlation-between-two-variables">Example 7: Correlation Between Two Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-8-anova-compare-more-than-two-groups">Example 8: ANOVA (Compare More Than Two Groups)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-challenge">Practice Challenge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
@@ -628,7 +798,7 @@ P-value: 0.3426925723722509
   <div class="footer-item">
     
 <p class="component-author">
-By Ben Huang
+By Ben Huang with the help of Gabby Li
 </p>
 
   </div>
@@ -638,7 +808,7 @@ By Ben Huang
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2025.
       <br/>
     
   </p>

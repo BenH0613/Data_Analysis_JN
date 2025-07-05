@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>🐼 Pandas for Data Analysis &#8212; Data Analysis with Python</title>
+    <title>Introduction to pandas &#8212; Data Analysis with Python</title>
   
   
   
@@ -58,10 +58,11 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/Pandas';</script>
+    <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="📊 Matplotlib for Data Visualization" href="Matplotlib.html" />
-    <link rel="prev" title="📘 SciPy for Scientific Computing" href="SciPy.html" />
+    <link rel="next" title="Plotting Experimental Data with matplotlib" href="Matplotlib.html" />
+    <link rel="prev" title="Introduction to NumPy" href="NumPy.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -175,28 +176,36 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    Welcome to the Data Analysis Book
+                    Welcome to Python for Biochemistry
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">🧮 Numerical Foundations</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="NumPy.html">📘 NumPy Tutorial: Numerical Foundations for Data Analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SciPy.html">📘 SciPy for Scientific Computing</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">🗃️ Data Handling</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Core Data Handling</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">🐼 Pandas for Data Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NumPy.html">NumPy: Working with Numerical Data</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pandas: Organizing and Analyzing Tabular Data</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">📊 Data Visualization</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Visualization</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Matplotlib.html">📊 Matplotlib for Data Visualization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Seaborn.html">📊 Seaborn Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Matplotlib.html">Matplotlib: Visualizing Scientific Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Seaborn.html">Seaborn Tutorial</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="Plotly.html">Plotly: Interactive Data Visualization</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Scientific &amp; Statistical Analysis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="SciPy.html">SciPy for Scientific Computing</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Statsmodels.html">Statsmodels: In-Depth Statistical Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Sympy.html">SymPy Tutorial</a></li>
 
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">🤖 Machine Learning</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bioinformatics &amp; Machine Learning</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Scikit_learn.html">🤖 Scikit-learn for Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Biopython.html">Biopython: Tools for Biological Computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Scikit_learn.html">Introduction to Scikit-learn</a></li>
+
 </ul>
 
     </div>
@@ -382,7 +391,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>🐼 Pandas for Data Analysis</h1>
+    <h1>Introduction to pandas</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -392,16 +401,22 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-pandas">📥 Importing Pandas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-dataframes">📊 Creating DataFrames</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inspecting-data">🔍 Inspecting Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-and-selecting-data">📌 Indexing and Selecting Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-and-boolean-indexing">🔄 Filtering and Boolean Indexing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-and-removing-columns">➕ Adding and Removing Columns</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-missing-values">🔁 Handling Missing Values</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-and-aggregation">🧮 Grouping and Aggregation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-and-writing-files">📤 Reading and Writing Files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-challenge">✅ Practice Challenge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-introduction-to-useful-pandas-syntax">Quick Introduction to Useful pandas Syntax</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-pandas">Importing Pandas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-dataframes">Creating DataFrames</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inspecting-data">Inspecting Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-and-selecting-data">Indexing and Selecting Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-and-boolean-indexing">Filtering and Boolean Indexing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-and-removing-columns">Adding and Removing Columns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-missing-values">Handling Missing Values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-and-aggregation">Grouping and Aggregation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-and-writing-files">Reading and Writing Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-elisa-plate-data-protein-concentration">Example: ELISA Plate Data (Protein Concentration)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-dataframe">What is a DataFrame?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-and-selection">Filtering and Selection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#group-statistics">Group Statistics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-sorting-and-exporting">Optional: Sorting and Exporting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
             </nav>
         </div>
@@ -413,14 +428,59 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="pandas-for-data-analysis">
-<h1>🐼 Pandas for Data Analysis<a class="headerlink" href="#pandas-for-data-analysis" title="Link to this heading">#</a></h1>
-<p>Pandas is a powerful library for data manipulation and analysis. It provides data structures like <code class="docutils literal notranslate"><span class="pre">Series</span></code> and <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> that make working with structured data intuitive.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-pandas">
+<h1>Introduction to pandas<a class="headerlink" href="#introduction-to-pandas" title="Link to this heading">#</a></h1>
+<p>Welcome to pandas! This powerful Python library is used for:</p>
+<ol class="arabic simple">
+<li><p>Reading and cleaning experimental data</p></li>
+<li><p>Organizing results like an Excel sheet</p></li>
+<li><p>Filtering, sorting, and grouping data</p></li>
+<li><p>Making analysis easier and reproducible</p></li>
+</ol>
+<blockquote>
+<div><p>Think of pandas as Excel for Python — but faster and more flexible.</p>
+</div></blockquote>
+<hr class="docutils" />
+<p>In this chapter, you’ll learn how to:</p>
+<ul class="simple">
+<li><p>Work with tables using <strong>DataFrames</strong></p></li>
+<li><p>Load CSV data from an experiment</p></li>
+<li><p>Calculate group statistics</p></li>
+<li><p>Apply it to a real example: an ELISA protein concentration assay</p></li>
+</ul>
+<br>
+<hr class="docutils" />
+<section id="quick-introduction-to-useful-pandas-syntax">
+<h2>Quick Introduction to Useful pandas Syntax<a class="headerlink" href="#quick-introduction-to-useful-pandas-syntax" title="Link to this heading">#</a></h2>
+<p>Here are the most common pandas tools you’ll use when working with lab data:</p>
+<ul class="simple">
+<li><p><strong>Create a DataFrame</strong><br />
+<code class="docutils literal notranslate"><span class="pre">pd.DataFrame(data)</span></code> → turns a dictionary or CSV file into a table</p></li>
+<li><p><strong>Look at the data</strong><br />
+<code class="docutils literal notranslate"><span class="pre">df.head()</span></code> → first 5 rows<br />
+<code class="docutils literal notranslate"><span class="pre">df.shape</span></code> → (rows, columns)<br />
+<code class="docutils literal notranslate"><span class="pre">df.describe()</span></code> → quick summary statistics</p></li>
+<li><p><strong>Select columns or rows</strong><br />
+<code class="docutils literal notranslate"><span class="pre">df['Protein_conc']</span></code> → select one column<br />
+<code class="docutils literal notranslate"><span class="pre">df.loc[0]</span></code> → select row by label or index<br />
+<code class="docutils literal notranslate"><span class="pre">df.iloc[0]</span></code> → select row by position</p></li>
+<li><p><strong>Filter rows based on a condition</strong><br />
+<code class="docutils literal notranslate"><span class="pre">df[df['Protein_conc']</span> <span class="pre">&gt;</span> <span class="pre">2.0]</span></code> → samples with high concentration</p></li>
+<li><p><strong>Group by and calculate statistics</strong><br />
+<code class="docutils literal notranslate"><span class="pre">df.groupby('Group')['Protein_conc'].mean()</span></code> → mean per group<br />
+<code class="docutils literal notranslate"><span class="pre">df.groupby('Group').agg(['mean',</span> <span class="pre">'std'])</span></code> → multiple stats</p></li>
+<li><p><strong>Sort and export</strong><br />
+<code class="docutils literal notranslate"><span class="pre">df.sort_values(by='Protein_conc')</span></code> → sort by column<br />
+<code class="docutils literal notranslate"><span class="pre">df.to_csv('results.csv')</span></code> → save as CSV</p></li>
+</ul>
+<p>These are the most useful “everyday tools” in pandas — once you get the hang of them, you’ll be able to handle almost any lab dataset.</p>
+</section>
 <section id="importing-pandas">
-<h2>📥 Importing Pandas<a class="headerlink" href="#importing-pandas" title="Link to this heading">#</a></h2>
+<h2>Importing Pandas<a class="headerlink" href="#importing-pandas" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First, import the pandas library</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -433,7 +493,7 @@ document.write(`
 </div>
 </section>
 <section id="creating-dataframes">
-<h2>📊 Creating DataFrames<a class="headerlink" href="#creating-dataframes" title="Link to this heading">#</a></h2>
+<h2>Creating DataFrames<a class="headerlink" href="#creating-dataframes" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># From dictionary</span>
@@ -488,7 +548,7 @@ document.write(`
 </div>
 </section>
 <section id="inspecting-data">
-<h2>🔍 Inspecting Data<a class="headerlink" href="#inspecting-data" title="Link to this heading">#</a></h2>
+<h2>Inspecting Data<a class="headerlink" href="#inspecting-data" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>  <span class="c1"># First few rows</span>
@@ -569,7 +629,7 @@ memory usage: 180.0+ bytes
 </div>
 </section>
 <section id="indexing-and-selecting-data">
-<h2>📌 Indexing and Selecting Data<a class="headerlink" href="#indexing-and-selecting-data" title="Link to this heading">#</a></h2>
+<h2>Indexing and Selecting Data<a class="headerlink" href="#indexing-and-selecting-data" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span>  <span class="c1"># Single column</span>
@@ -589,7 +649,7 @@ Name: 0, dtype: object
 </div>
 </section>
 <section id="filtering-and-boolean-indexing">
-<h2>🔄 Filtering and Boolean Indexing<a class="headerlink" href="#filtering-and-boolean-indexing" title="Link to this heading">#</a></h2>
+<h2>Filtering and Boolean Indexing<a class="headerlink" href="#filtering-and-boolean-indexing" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">28</span><span class="p">]</span>  <span class="c1"># People older than 28</span>
@@ -636,7 +696,7 @@ Name: 0, dtype: object
 </div>
 </section>
 <section id="adding-and-removing-columns">
-<h2>➕ Adding and Removing Columns<a class="headerlink" href="#adding-and-removing-columns" title="Link to this heading">#</a></h2>
+<h2>Adding and Removing Columns<a class="headerlink" href="#adding-and-removing-columns" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;UK&#39;</span><span class="p">,</span> <span class="s1">&#39;USA&#39;</span><span class="p">,</span> <span class="s1">&#39;Canada&#39;</span><span class="p">]</span>
@@ -689,7 +749,7 @@ Name: 0, dtype: object
 </div>
 </section>
 <section id="handling-missing-values">
-<h2>🔁 Handling Missing Values<a class="headerlink" href="#handling-missing-values" title="Link to this heading">#</a></h2>
+<h2>Handling Missing Values<a class="headerlink" href="#handling-missing-values" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Insert missing value</span>
@@ -741,7 +801,7 @@ Name: 0, dtype: object
 </div>
 </section>
 <section id="grouping-and-aggregation">
-<h2>🧮 Grouping and Aggregation<a class="headerlink" href="#grouping-and-aggregation" title="Link to this heading">#</a></h2>
+<h2>Grouping and Aggregation<a class="headerlink" href="#grouping-and-aggregation" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
@@ -759,7 +819,7 @@ dtype: int64
 </div>
 </section>
 <section id="reading-and-writing-files">
-<h2>📤 Reading and Writing Files<a class="headerlink" href="#reading-and-writing-files" title="Link to this heading">#</a></h2>
+<h2>Reading and Writing Files<a class="headerlink" href="#reading-and-writing-files" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># df.to_csv(&#39;mydata.csv&#39;, index=False)</span>
@@ -769,28 +829,454 @@ dtype: int64
 </div>
 </div>
 </section>
-<section id="practice-challenge">
-<h2>✅ Practice Challenge<a class="headerlink" href="#practice-challenge" title="Link to this heading">#</a></h2>
-<p><strong>Q:</strong> Create a DataFrame with 5 rows of fictional student data including columns <code class="docutils literal notranslate"><span class="pre">Name</span></code>, <code class="docutils literal notranslate"><span class="pre">Score</span></code>, and <code class="docutils literal notranslate"><span class="pre">Passed</span></code>, then calculate the average score.</p>
+<section id="example-elisa-plate-data-protein-concentration">
+<h2>Example: ELISA Plate Data (Protein Concentration)<a class="headerlink" href="#example-elisa-plate-data-protein-concentration" title="Link to this heading">#</a></h2>
+<p>You ran an ELISA experiment to measure protein concentration in 3 groups of samples:</p>
+<ul class="simple">
+<li><p>Control</p></li>
+<li><p>Treated_A</p></li>
+<li><p>Treated_B</p></li>
+</ul>
+<p>Each sample has a measured absorbance and calculated protein concentration (in µg/mL).</p>
+<p>Let’s load this sample dataset using pandas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="n">students</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-    <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Tom&#39;</span><span class="p">,</span> <span class="s1">&#39;Jerry&#39;</span><span class="p">,</span> <span class="s1">&#39;Anna&#39;</span><span class="p">,</span> <span class="s1">&#39;Lucy&#39;</span><span class="p">,</span> <span class="s1">&#39;Jack&#39;</span><span class="p">],</span>
-    <span class="s1">&#39;Score&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">88</span><span class="p">],</span>
-    <span class="s1">&#39;Passed&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
-<span class="p">})</span>
-<span class="n">students</span><span class="p">[</span><span class="s1">&#39;Score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s create a simple DataFrame manually for this example</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Sample_ID&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="s1">&#39;C2&#39;</span><span class="p">,</span> <span class="s1">&#39;C3&#39;</span><span class="p">,</span> <span class="s1">&#39;A1&#39;</span><span class="p">,</span> <span class="s1">&#39;A2&#39;</span><span class="p">,</span> <span class="s1">&#39;A3&#39;</span><span class="p">,</span> <span class="s1">&#39;B1&#39;</span><span class="p">,</span> <span class="s1">&#39;B2&#39;</span><span class="p">,</span> <span class="s1">&#39;B3&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Group&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Control&#39;</span><span class="p">,</span> <span class="s1">&#39;Control&#39;</span><span class="p">,</span> <span class="s1">&#39;Control&#39;</span><span class="p">,</span> <span class="s1">&#39;Treated_A&#39;</span><span class="p">,</span> <span class="s1">&#39;Treated_A&#39;</span><span class="p">,</span> <span class="s1">&#39;Treated_A&#39;</span><span class="p">,</span> <span class="s1">&#39;Treated_B&#39;</span><span class="p">,</span> <span class="s1">&#39;Treated_B&#39;</span><span class="p">,</span> <span class="s1">&#39;Treated_B&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Absorbance&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.12</span><span class="p">,</span> <span class="mf">0.13</span><span class="p">,</span> <span class="mf">0.11</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.27</span><span class="p">,</span> <span class="mf">0.26</span><span class="p">,</span> <span class="mf">0.20</span><span class="p">,</span> <span class="mf">0.22</span><span class="p">,</span> <span class="mf">0.21</span><span class="p">],</span>
+    <span class="s1">&#39;Protein_conc&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">,</span> <span class="mf">2.6</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="c1"># Create a pandas DataFrame</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Show the first few rows of the table</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(86.6)
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Sample_ID</th>
+      <th>Group</th>
+      <th>Absorbance</th>
+      <th>Protein_conc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>C1</td>
+      <td>Control</td>
+      <td>0.12</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>C2</td>
+      <td>Control</td>
+      <td>0.13</td>
+      <td>1.3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>C3</td>
+      <td>Control</td>
+      <td>0.11</td>
+      <td>1.1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>A1</td>
+      <td>Treated_A</td>
+      <td>0.25</td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>A2</td>
+      <td>Treated_A</td>
+      <td>0.27</td>
+      <td>2.7</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="what-is-a-dataframe">
+<h2>What is a DataFrame?<a class="headerlink" href="#what-is-a-dataframe" title="Link to this heading">#</a></h2>
+<p>A <strong>DataFrame</strong> is like a spreadsheet or lab table — each <strong>row</strong> is a sample, and each <strong>column</strong> is a measurement or label.</p>
+<p>Let’s explore how to analyze this table.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Show the shape (rows, columns)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape:&quot;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="c1"># Summary statistics for numeric columns</span>
+<span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Shape: (9, 4)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Absorbance</th>
+      <th>Protein_conc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>9.000000</td>
+      <td>9.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>0.196667</td>
+      <td>1.966667</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.062048</td>
+      <td>0.620484</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.110000</td>
+      <td>1.100000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>0.130000</td>
+      <td>1.300000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>0.210000</td>
+      <td>2.100000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>0.250000</td>
+      <td>2.500000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>0.270000</td>
+      <td>2.700000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="filtering-and-selection">
+<h2>Filtering and Selection<a class="headerlink" href="#filtering-and-selection" title="Link to this heading">#</a></h2>
+<p>You can select specific rows or columns, just like filtering in Excel.</p>
+<p>Let’s:</p>
+<ul class="simple">
+<li><p>Select only the “Protein_conc” column</p></li>
+<li><p>Filter samples where protein concentration &gt; 2.0</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Select just the protein concentration column</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Protein_conc&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    1.2
+1    1.3
+2    1.1
+3    2.5
+4    2.7
+5    2.6
+6    2.0
+7    2.2
+8    2.1
+Name: Protein_conc, dtype: float64
 </pre></div>
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filter rows where Protein_conc &gt; 2.0</span>
+<span class="n">high_conc</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Protein_conc&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">2.0</span><span class="p">]</span>
+<span class="n">high_conc</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Sample_ID</th>
+      <th>Group</th>
+      <th>Absorbance</th>
+      <th>Protein_conc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3</th>
+      <td>A1</td>
+      <td>Treated_A</td>
+      <td>0.25</td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>A2</td>
+      <td>Treated_A</td>
+      <td>0.27</td>
+      <td>2.7</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>A3</td>
+      <td>Treated_A</td>
+      <td>0.26</td>
+      <td>2.6</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>B2</td>
+      <td>Treated_B</td>
+      <td>0.22</td>
+      <td>2.2</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>B3</td>
+      <td>Treated_B</td>
+      <td>0.21</td>
+      <td>2.1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="group-statistics">
+<h2>Group Statistics<a class="headerlink" href="#group-statistics" title="Link to this heading">#</a></h2>
+<p>Let’s calculate the average protein concentration <strong>for each treatment group</strong>.</p>
+<p>This is useful for comparing experimental conditions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Group by the &quot;Group&quot; column and calculate the mean</span>
+<span class="n">group_means</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Group&#39;</span><span class="p">)[</span><span class="s1">&#39;Protein_conc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">group_means</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Group
+Control      1.2
+Treated_A    2.6
+Treated_B    2.1
+Name: Protein_conc, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We can also calculate standard deviation per group</span>
+<span class="n">group_std</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Group&#39;</span><span class="p">)[</span><span class="s1">&#39;Protein_conc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">group_std</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Group
+Control      0.1
+Treated_A    0.1
+Treated_B    0.1
+Name: Protein_conc, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="optional-sorting-and-exporting">
+<h2>Optional: Sorting and Exporting<a class="headerlink" href="#optional-sorting-and-exporting" title="Link to this heading">#</a></h2>
+<p>You can sort your results, or save them to a CSV file to share with colleagues.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sort by Protein_conc, descending</span>
+<span class="n">df_sorted</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Protein_conc&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">df_sorted</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Sample_ID</th>
+      <th>Group</th>
+      <th>Absorbance</th>
+      <th>Protein_conc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>4</th>
+      <td>A2</td>
+      <td>Treated_A</td>
+      <td>0.27</td>
+      <td>2.7</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>A3</td>
+      <td>Treated_A</td>
+      <td>0.26</td>
+      <td>2.6</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>A1</td>
+      <td>Treated_A</td>
+      <td>0.25</td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>B2</td>
+      <td>Treated_B</td>
+      <td>0.22</td>
+      <td>2.2</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>B3</td>
+      <td>Treated_B</td>
+      <td>0.21</td>
+      <td>2.1</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>B1</td>
+      <td>Treated_B</td>
+      <td>0.20</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>C2</td>
+      <td>Control</td>
+      <td>0.13</td>
+      <td>1.3</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>C1</td>
+      <td>Control</td>
+      <td>0.12</td>
+      <td>1.2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>C3</td>
+      <td>Control</td>
+      <td>0.11</td>
+      <td>1.1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Export to CSV (if needed)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;elisa_results.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<p>In this chapter, you learned how to:</p>
+<ul class="simple">
+<li><p>Create and explore a pandas <strong>DataFrame</strong></p></li>
+<li><p>Select and filter experimental data</p></li>
+<li><p>Group by condition (e.g., Control vs Treated)</p></li>
+<li><p>Calculate statistics like <strong>mean</strong> and <strong>std</strong></p></li>
+<li><p>Sort and export your results</p></li>
+</ul>
 </section>
 </section>
 
@@ -825,12 +1311,12 @@ dtype: int64
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="SciPy.html"
+       href="NumPy.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">📘 SciPy for Scientific Computing</p>
+        <p class="prev-next-title">Introduction to NumPy</p>
       </div>
     </a>
     <a class="right-next"
@@ -838,7 +1324,7 @@ dtype: int64
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">📊 Matplotlib for Data Visualization</p>
+        <p class="prev-next-title">Plotting Experimental Data with matplotlib</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -858,16 +1344,22 @@ dtype: int64
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-pandas">📥 Importing Pandas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-dataframes">📊 Creating DataFrames</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inspecting-data">🔍 Inspecting Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-and-selecting-data">📌 Indexing and Selecting Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-and-boolean-indexing">🔄 Filtering and Boolean Indexing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-and-removing-columns">➕ Adding and Removing Columns</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-missing-values">🔁 Handling Missing Values</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-and-aggregation">🧮 Grouping and Aggregation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-and-writing-files">📤 Reading and Writing Files</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-challenge">✅ Practice Challenge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-introduction-to-useful-pandas-syntax">Quick Introduction to Useful pandas Syntax</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-pandas">Importing Pandas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-dataframes">Creating DataFrames</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inspecting-data">Inspecting Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-and-selecting-data">Indexing and Selecting Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-and-boolean-indexing">Filtering and Boolean Indexing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-and-removing-columns">Adding and Removing Columns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-missing-values">Handling Missing Values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-and-aggregation">Grouping and Aggregation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-and-writing-files">Reading and Writing Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-elisa-plate-data-protein-concentration">Example: ELISA Plate Data (Protein Concentration)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-dataframe">What is a DataFrame?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-and-selection">Filtering and Selection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#group-statistics">Group Statistics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-sorting-and-exporting">Optional: Sorting and Exporting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
   </nav></div>
 
@@ -882,7 +1374,7 @@ dtype: int64
   <div class="footer-item">
     
 <p class="component-author">
-By Ben Huang
+By Ben Huang with the help of Gabby Li
 </p>
 
   </div>
@@ -892,7 +1384,7 @@ By Ben Huang
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2025.
       <br/>
     
   </p>

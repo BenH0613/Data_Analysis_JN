@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Welcome to the Data Analysis Book &#8212; Data Analysis with Python</title>
+    <title>Welcome to Python for Biochemistry &#8212; Data Analysis with Python</title>
   
   
   
@@ -60,9 +60,10 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <link rel="icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="📘 NumPy Tutorial: Numerical Foundations for Data Analysis" href="content/NumPy.html" />
+    <link rel="next" title="Introduction to NumPy" href="content/NumPy.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -178,28 +179,36 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    Welcome to the Data Analysis Book
+                    Welcome to Python for Biochemistry
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">🧮 Numerical Foundations</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Core Data Handling</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="content/NumPy.html">📘 NumPy Tutorial: Numerical Foundations for Data Analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/SciPy.html">📘 SciPy for Scientific Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/NumPy.html">NumPy: Working with Numerical Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/Pandas.html">Pandas: Organizing and Analyzing Tabular Data</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">🗃️ Data Handling</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Visualization</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="content/Pandas.html">🐼 Pandas for Data Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/Matplotlib.html">Matplotlib: Visualizing Scientific Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/Seaborn.html">Seaborn Tutorial</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="content/Plotly.html">Plotly: Interactive Data Visualization</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">📊 Data Visualization</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Scientific &amp; Statistical Analysis</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="content/Matplotlib.html">📊 Matplotlib for Data Visualization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content/Seaborn.html">📊 Seaborn Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/SciPy.html">SciPy for Scientific Computing</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="content/Statsmodels.html">Statsmodels: In-Depth Statistical Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/Sympy.html">SymPy Tutorial</a></li>
 
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">🤖 Machine Learning</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bioinformatics &amp; Machine Learning</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="content/Scikit_learn.html">🤖 Scikit-learn for Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/Biopython.html">Biopython: Tools for Biological Computation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/Scikit_learn.html">Introduction to Scikit-learn</a></li>
+
 </ul>
 
     </div>
@@ -385,7 +394,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Welcome to the Data Analysis Book</h1>
+    <h1>Welcome to Python for Biochemistry</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -395,8 +404,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-youll-learn">What You’ll Learn</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapters">Chapters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-ll-learn">What You’ll Learn</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#real-world-applications">Real-World Applications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-this-book">How to Use This Book</a></li>
 </ul>
             </nav>
         </div>
@@ -408,23 +418,36 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="welcome-to-the-data-analysis-book">
-<h1>Welcome to the Data Analysis Book<a class="headerlink" href="#welcome-to-the-data-analysis-book" title="Link to this heading">#</a></h1>
-<p>This Jupyter Book is an interactive learning resource designed to help you explore essential tools and techniques for data analysis using Python.</p>
-<p>Whether you’re a beginner or brushing up your skills, this book will guide you through practical examples with clear code, visualizations, and explanations.</p>
-<section id="what-youll-learn">
-<h2>What You’ll Learn<a class="headerlink" href="#what-youll-learn" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="welcome-to-python-for-biochemistry">
+<h1>Welcome to Python for Biochemistry<a class="headerlink" href="#welcome-to-python-for-biochemistry" title="Link to this heading">#</a></h1>
+<p>This interactive textbook introduces you to Python programming through real bioscience examples. You don’t need any prior coding experience — just curiosity and a basic understanding of lab data.</p>
+<section id="what-you-ll-learn">
+<h2>What You’ll Learn<a class="headerlink" href="#what-you-ll-learn" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>How to use Python libraries for working with data</p></li>
-<li><p>Creating clear and beautiful plots using Seaborn and Matplotlib</p></li>
-<li><p>Exploring datasets using pandas</p></li>
-<li><p>Visualizing trends and patterns through plots like box plots, bar charts, scatter plots, and heatmaps</p></li>
-<li><p>Structuring analysis projects in Jupyter Notebooks</p></li>
+<li><p>How to use Python to clean, analyze, and visualize experimental data</p></li>
+<li><p>Which libraries are best for specific bioscience tasks</p></li>
+<li><p>How to build simple models like linear regression and clustering</p></li>
 </ul>
 </section>
-<section id="chapters">
-<h2>Chapters<a class="headerlink" href="#chapters" title="Link to this heading">#</a></h2>
-<p>Each chapter in this book is focused on a specific tool or technique. Examples are drawn from real-world datasets and are presented in an easy-to-follow notebook format.</p>
+<section id="real-world-applications">
+<h2>Real-World Applications<a class="headerlink" href="#real-world-applications" title="Link to this heading">#</a></h2>
+<p>Each chapter includes a hands-on example based on biochemistry, such as:</p>
+<ul class="simple">
+<li><p>Tracking enzyme activity over time</p></li>
+<li><p>Analyzing protein concentrations from ELISA</p></li>
+<li><p>Fitting curves to reaction data</p></li>
+<li><p>Exploring genetic sequences with Biopython</p></li>
+<li><p>Classifying samples with machine learning</p></li>
+</ul>
+</section>
+<section id="how-to-use-this-book">
+<h2>How to Use This Book<a class="headerlink" href="#how-to-use-this-book" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Work through the chapters in order, or skip to the tools you need.</p></li>
+<li><p>Run each code cell to see the output.</p></li>
+<li><p>All explanations are written for absolute beginners.</p></li>
+</ul>
+<p>Let’s get started!</p>
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -471,7 +494,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">📘 NumPy Tutorial: Numerical Foundations for Data Analysis</p>
+        <p class="prev-next-title">Introduction to NumPy</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -491,8 +514,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-youll-learn">What You’ll Learn</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapters">Chapters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-ll-learn">What You’ll Learn</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#real-world-applications">Real-World Applications</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-this-book">How to Use This Book</a></li>
 </ul>
   </nav></div>
 
@@ -507,7 +531,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By Ben Huang
+By Ben Huang with the help of Gabby Li
 </p>
 
   </div>
@@ -517,7 +541,7 @@ By Ben Huang
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2025.
       <br/>
     
   </p>
